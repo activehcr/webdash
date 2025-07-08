@@ -78,49 +78,36 @@
       padding: 0 1rem 2rem 1rem;
       max-width: 1200px;
       margin: auto;
-      justify-items: center;
     }
     .card-link-wrapper {
       text-decoration: none;
       color: inherit;
       display: block;
       transition: box-shadow 0.2s;
-      width: 100%;
-      max-width: 340px;
+    }
+    .card-link-wrapper .card {
+      cursor: pointer;
     }
     .card-link-wrapper:focus .card,
     .card-link-wrapper:hover .card {
       box-shadow: 0 6px 24px rgba(35,47,62,0.16);
     }
     .card {
-      width: 100%;
-      min-height: 410px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
       overflow: hidden;
-      position: relative;
-      transition: box-shadow 0.2s;
-    }
-    .card-image-area {
-      width: 100%;
-      background: #f3f3f3;
-      position: relative;
-      min-height: 180px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+      position: relative;
     }
     .card img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      display: block;
-      min-height: 180px;
       background: #f3f3f3;
+      display: block;
     }
     .discount-tag {
       position: absolute;
@@ -149,7 +136,6 @@
       margin-bottom: 0.5rem;
       color: #232f3e;
       min-height: 40px;
-      word-break: break-word;
     }
     .card-category {
       font-size: 0.95rem;
@@ -206,21 +192,34 @@
       .products {
         grid-template-columns: 1fr;
       }
-      .card-link-wrapper, .card {
-        max-width: 100%;
-      }
-      .card {
-        min-height: 340px;
-      }
-      .card img, .card-image-area {
-        min-height: 120px;
+      .card img {
+        aspect-ratio: 1 / 1;
       }
     }
+    
+    .products {
+  justify-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 340px;
+  min-height: 420px; /* Adjust this value as needed for your design */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 100%;
+  }
+}
   </style>
 </head>
 <body>
   <header>
-    <h1>Amazon Product Gallery</h1>
+    <h1>Amazon Product Picks</h1>
   </header>
   <div class="search-bar-container">
     <input
@@ -233,7 +232,6 @@
   </div>
   <div class="filters">
     <button class="active" data-category="all">All</button>
-    <button data-category="accessories">Accessories</button>
     <button data-category="electronics">Electronics</button>
     <button data-category="fashion">Fashion</button>
     <button data-category="home">Home</button>
@@ -243,16 +241,9 @@
   <div class="products" id="productGrid"></div>
   <div id="pagination"></div>
   <script>
-    // Product data: category is now an array for multi-category support
-        const products = [
-      {
-  title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
-  category: "fashion",
-  price: "₹379",
-  image: "/img/6.jpg",
-  link: "https://amzn.to/4kxSd90",
-  discount: "75% Off"
-},
+    // Product data: add 'discount' field as needed
+    const products = [
+      
       {
   title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
   category: "accessories",
@@ -320,11 +311,7 @@
 
       // Category filter
       if (currentCategory !== 'all') {
-        filtered = filtered.filter(p =>
-          Array.isArray(p.category)
-            ? p.category.includes(currentCategory)
-            : p.category === currentCategory
-        );
+        filtered = filtered.filter(p => p.category === currentCategory);
       }
 
       // Search filter
@@ -332,10 +319,7 @@
         const term = searchTerm.toLowerCase();
         filtered = filtered.filter(p =>
           (p.title && p.title.toLowerCase().includes(term)) ||
-          (Array.isArray(p.category)
-            ? p.category.some(cat => cat.toLowerCase().includes(term))
-            : (p.category && p.category.toLowerCase().includes(term))
-          ) ||
+          (p.category && p.category.toLowerCase().includes(term)) ||
           (p.discount && p.discount.toLowerCase().includes(term))
         );
       }
@@ -364,23 +348,17 @@
       const paginatedItems = filtered.slice(start, end);
 
       paginatedItems.forEach(p => {
-        // Show all categories as comma-separated, capitalized
-        const categories = Array.isArray(p.category)
-          ? p.category.map(cat => cat.charAt(0).toUpperCase() + cat.slice(1)).join(', ')
-          : (p.category.charAt(0).toUpperCase() + p.category.slice(1));
-
         grid.innerHTML += `
           <a class="card-link-wrapper" href="${p.link}" target="_blank" rel="noopener">
             <div class="card">
-              <div class="card-image-area">
-                <img src="${p.image}" alt="${p.title}"
-                  onerror="this.onerror=null;this.src='https://via.placeholder.com/320x320?text=No+Image';">
+              <div style="position:relative;">
+                <img src="${p.image}" alt="${p.title}">
                 ${p.discount ? `<span class="discount-tag">${p.discount}</span>` : ''}
               </div>
               <div class="card-body">
                 <div>
                   <div class="card-title">${p.title}</div>
-                  <div class="card-category">${categories}</div>
+                  <div class="card-category">${p.category.charAt(0).toUpperCase() + p.category.slice(1)}</div>
                   <div class="card-price">${p.price}</div>
                 </div>
                 <span class="card-link-btn">View on Amazon</span>
@@ -477,3 +455,5 @@
   </script>
 </body>
 </html>
+
+
