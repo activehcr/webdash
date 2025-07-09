@@ -233,211 +233,93 @@
   </div>
   <div class="filters">
     <button class="active" data-category="all">All</button>
+    <button data-category="accessories">Accessories</button>
     <button data-category="electronics">Electronics</button>
     <button data-category="fashion">Fashion</button>
     <button data-category="home">Home</button>
-    <button data-category="gadgets">Gadgets</button>
-    <button data-category="accessories">Accessories</button>
+    <button data-category="fitness">Fitness</button>
     <button id="clearBtn">Clear All</button>
   </div>
   <div class="products" id="productGrid"></div>
   <div id="pagination"></div>
   <script>
-    // Product data: category is always an array of lowercase strings
-    const products = [
-            {
-        title: "STRIFF Angles Adjustable Aluminum Ergonomic Foldable Portable Tabletop Laptop/Desktop Riser Stand Holder (Metallic Silver)",
-        category: "accessories",
-        price: "₹314",
-        image: "/img/9.jpg",
-        link: "https://amzn.to/3GALtJm",
-        discount: "79% Off"
-      },
+    // Product data: category is now an array for multi-category support
+        const products = [
+      
       {
-        title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volum Playtime Aux/USB Port (Black)",
-        category: "electronics",
-        price: "₹749",
-        image: "/img/8.jpg",
-        link: "https://amzn.to/4lj9rIc",
-        discount: "69% Off"
-      },
+  title: "STRIFF Angles Adjustable Aluminum Ergonomic Foldable Portable Tabletop Laptop/Desktop Riser Stand Holder (Metallic Silver)",
+  category: "accessories",
+  price: "₹314",
+  image: "/img/9.jpg",
+  link: "https://amzn.to/3GALtJm",
+  discount: "79% Off"
+},
       {
-        title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
-        category: "fashion",
-        price: "₹379",
-        image: "/img/7.jpg",
-        link: "https://amzn.to/4kxSd90",
-        discount: "75% Off"
-      },
+  title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volum Playtime Aux/USB Port (Black)",
+  category: "electronics",
+  price: "₹749",
+  image: "/img/8.jpg",
+  link: "https://amzn.to/4lj9rIc",
+  discount: "69% Off"
+},
       {
-        title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
-        category: "accessories",
-        price: "₹1,799",
-        image: "/img/6.jpg",
-        link: "https://amzn.to/44moMlw",
-        discount: "40% Off"
-      },
+  title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
+  category: "fashion",
+  price: "₹379",
+  image: "/img/7.jpg",
+  link: "https://amzn.to/4kxSd90",
+  discount: "75% Off"
+},
+     {
+  title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
+  category: "accessories",
+  price: "₹1,799",
+  image: "/img/6.jpg",
+  link: "https://amzn.to/44moMlw",
+  discount: "40% Off"
+},
       {
-        title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
-        category: "accessories",
-        price: "₹799",
-        image: "/img/5.jpg",
-        link: "https://amzn.to/4nBwijJ",
-        discount: "64% Off"
-      },
+  title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
+  category: "accessories",
+  price: "₹799",
+  image: "/img/5.jpg",
+  link: "https://amzn.to/4nBwijJ",
+  discount: "64% Off"
+},
       {
-        title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
-        category: "accessories",
-        price: "₹419",
-        image: "/img/4.jpg",
-        link: "https://amzn.to/4llqsSh",
-        discount: "68% Off"
-      },
+  title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
+  category: "accessories",
+  price: "₹419",
+  image: "/img/4.jpg",
+  link: "https://amzn.to/4llqsSh",
+  discount: "68% Off"
+},
       {
-        title: "Havells Instanio 3L Instant Water Heater(Geyser)",
-        category: "electronics",
-        price: "₹3,650",
-        image: "/img/3.jpg",
-        link: "https://amzn.to/3Tu3zzS",
-        discount: "41% Off"
-      },
+  title: "Havells Instanio 3L Instant Water Heater(Geyser)",
+  category: "electronics",
+  price: "₹3,650",
+  image: "/img/3.jpg",
+  link: "https://amzn.to/3Tu3zzS",
+  discount: "41% Off"
+},
       {
-        title: "Taprin Men's Casual Shoes",
-        category: "fashion",
-        price: "₹570",
-        image: "/img/2.jpg",
-        link: "https://amzn.to/3IjTpiF",
-        discount: "43% Off"
-      },
+  title: "Taprin Men's Casual Shoes",
+  category: "fashion",
+  price: "₹570",
+  image: "/img/2.jpg",
+  link: "https://amzn.to/3IjTpiF",
+  discount: "43% Off"
+},
       {
-        title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
-        category: "accessories",
-        price: "₹799",
-        image: "img/1.jpg",
-        link: "https://amzn.to/4lGovj1",
-        discount: "83% Off"
-      }, 
-            {
-        title: "STRIFF Angles Adjustable Aluminum Ergonomic Foldable Portable Tabletop Laptop/Desktop Riser Stand Holder (Metallic Silver)",
-        category: "accessories",
-        price: "₹314",
-        image: "/img/9.jpg",
-        link: "https://amzn.to/3GALtJm",
-        discount: "79% Off"
-      },
-      {
-        title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volum Playtime Aux/USB Port (Black)",
-        category: "electronics",
-        price: "₹749",
-        image: "/img/8.jpg",
-        link: "https://amzn.to/4lj9rIc",
-        discount: "69% Off"
-      },
-      {
-        title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
-        category: "fashion",
-        price: "₹379",
-        image: "/img/7.jpg",
-        link: "https://amzn.to/4kxSd90",
-        discount: "75% Off"
-      },
-      {
-        title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
-        category: "accessories",
-        price: "₹1,799",
-        image: "/img/6.jpg",
-        link: "https://amzn.to/44moMlw",
-        discount: "40% Off"
-      },
-      {
-        title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
-        category: "accessories",
-        price: "₹799",
-        image: "/img/5.jpg",
-        link: "https://amzn.to/4nBwijJ",
-        discount: "64% Off"
-      },
-      {
-        title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
-        category: "accessories",
-        price: "₹419",
-        image: "/img/4.jpg",
-        link: "https://amzn.to/4llqsSh",
-        discount: "68% Off"
-      },
-      {
-        title: "Havells Instanio 3L Instant Water Heater(Geyser)",
-        category: "electronics",
-        price: "₹3,650",
-        image: "/img/3.jpg",
-        link: "https://amzn.to/3Tu3zzS",
-        discount: "41% Off"
-      },
-      {
-        title: "Taprin Men's Casual Shoes",
-        category: "fashion",
-        price: "₹570",
-        image: "/img/2.jpg",
-        link: "https://amzn.to/3IjTpiF",
-        discount: "43% Off"
-      },
-      {
-        title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
-        category: "accessories",
-        price: "₹799",
-        image: "img/1.jpg",
-        link: "https://amzn.to/4lGovj1",
-        discount: "83% Off"
-      }, 
-      {
-        title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
-        category: ["accessories"],
-        price: "₹799",
-        image: "/img/5.jpg",
-        link: "https://amzn.to/4nBwijJ",
-        discount: "64% Off"
-      },
-      {
-        title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
-        category: ["accessories"],
-        price: "₹419",
-        image: "/img/4.jpg",
-        link: "https://amzn.to/4llqsSh",
-        discount: "68% Off"
-      },
-      {
-        title: "Havells Instanio 3L Instant Water Heater(Geyser)",
-        category: ["electronics"],
-        price: "₹3,650",
-        image: "/img/3.jpg",
-        link: "https://amzn.to/3Tu3zzS",
-        discount: "41% Off"
-      },
-      {
-        title: "Taprin Men's Casual Shoes",
-        category: ["fashion"],
-        price: "₹570",
-        image: "/img/2.jpg",
-        link: "https://amzn.to/3IjTpiF",
-        discount: "43% Off"
-      },
-      {
-        title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
-        category: ["accessories"],
-        price: "₹799",
-        image: "/img/1.jpg",
-        link: "https://amzn.to/4lGovj1",
-        discount: "83% Off"
-      },
-      {
-        title: "Echo Dot (5th Gen)",
-        category: ["electronics"],
-        price: "₹4,499",
-        image: "https://m.media-amazon.com/images/I/61u48FEsQbL._AC_UL320_.jpg",
-        link: "https://www.amazon.in/dp/B09B8V8YBM",
-        discount: "60% Off"
-      }
-      // Add more products as needed
+  title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
+  category: "accessories",
+  price: "₹799",
+  image: "img/1.jpg",
+  link: "https://amzn.to/4lGovj1",
+  discount: "83% Off"
+}
+
+      // Add as many products as you want here, with or without 'discount'
     ];
 
     const productsPerPage = 8;
@@ -450,19 +332,13 @@
       const params = new URLSearchParams(window.location.search);
       return params.get('search') || '';
     }
-    function getPageFromQuery() {
-      const params = new URLSearchParams(window.location.search);
-      return parseInt(params.get('page')) || 1;
-    }
 
-    // On page load, set search term and page from URL if present
+    // On page load, set search term from URL if present
     const initialSearch = getSearchFromQuery();
-    const initialPage = getPageFromQuery();
     if (initialSearch) {
       document.getElementById('searchBar').value = initialSearch;
       searchTerm = initialSearch;
     }
-    currentPage = initialPage;
 
     function filterProducts() {
       let filtered = products;
@@ -472,7 +348,7 @@
         filtered = filtered.filter(p =>
           Array.isArray(p.category)
             ? p.category.includes(currentCategory)
-            : (typeof p.category === "string" && p.category.toLowerCase() === currentCategory)
+            : p.category === currentCategory
         );
       }
 
@@ -570,10 +446,7 @@
     // Expose changePage globally for inline onclick
     window.changePage = function(page) {
       if (page < 1) return;
-      currentPage = page;
-      // Update URL with page and search
-      window.history.replaceState({}, '', `/?page=${currentPage}${searchTerm ? '&search=' + encodeURIComponent(searchTerm) : ''}`);
-      renderProducts(currentCategory, currentPage, searchTerm);
+      renderProducts(currentCategory, page, searchTerm);
     }
 
     // Filter buttons
@@ -582,9 +455,6 @@
         document.querySelectorAll('.filters button[data-category]').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentCategory = this.dataset.category;
-        currentPage = 1;
-        // Update URL with page and search
-        window.history.replaceState({}, '', `/?page=1${searchTerm ? '&search=' + encodeURIComponent(searchTerm) : ''}`);
         renderProducts(currentCategory, 1, searchTerm);
       });
     });
@@ -596,7 +466,6 @@
       currentCategory = 'all';
       document.getElementById('searchBar').value = '';
       searchTerm = '';
-      currentPage = 1;
       window.history.replaceState({}, '', '/');
       renderProducts('all', 1, '');
     });
@@ -604,8 +473,11 @@
     // Search bar event (live search + update URL)
     document.getElementById('searchBar').addEventListener('input', function(e) {
       searchTerm = e.target.value;
-      currentPage = 1;
-      window.history.replaceState({}, '', `/?page=1${searchTerm ? '&search=' + encodeURIComponent(searchTerm) : ''}`);
+      if (searchTerm.trim() !== '') {
+        window.history.replaceState({}, '', '/?search=' + encodeURIComponent(searchTerm.trim()));
+      } else {
+        window.history.replaceState({}, '', '/');
+      }
       renderProducts(currentCategory, 1, searchTerm);
     });
 
@@ -614,15 +486,18 @@
       if (e.key === 'Enter') {
         e.preventDefault();
         searchTerm = e.target.value;
-        currentPage = 1;
-        window.history.replaceState({}, '', `/?page=1${searchTerm ? '&search=' + encodeURIComponent(searchTerm) : ''}`);
+        if (searchTerm.trim() !== '') {
+          window.history.replaceState({}, '', '/?search=' + encodeURIComponent(searchTerm.trim()));
+        } else {
+          window.history.replaceState({}, '', '/');
+        }
         renderProducts(currentCategory, 1, searchTerm);
         e.target.blur(); // Hide keyboard on mobile
       }
     });
 
     // Initial render
-    renderProducts(currentCategory, currentPage, searchTerm);
+    renderProducts(currentCategory, 1, searchTerm);
 
   </script>
 </body>

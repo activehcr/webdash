@@ -233,93 +233,92 @@
   </div>
   <div class="filters">
     <button class="active" data-category="all">All</button>
-    <button data-category="accessories">Accessories</button>
     <button data-category="electronics">Electronics</button>
     <button data-category="fashion">Fashion</button>
     <button data-category="home">Home</button>
-    <button data-category="fitness">Fitness</button>
+    <button data-category="gadgets">Gadgets</button>
+    <button data-category="accessories">Accessories</button>
     <button id="clearBtn">Clear All</button>
   </div>
   <div class="products" id="productGrid"></div>
   <div id="pagination"></div>
   <script>
-    // Product data: category is now an array for multi-category support
-        const products = [
-      
-      {
-  title: "STRIFF Angles Adjustable Aluminum Ergonomic Foldable Portable Tabletop Laptop/Desktop Riser Stand Holder (Metallic Silver)",
-  category: "accessories",
-  price: "₹314",
-  image: "/img/9.jpg",
-  link: "https://amzn.to/3GALtJm",
-  discount: "79% Off"
-},
-      {
-  title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volum Playtime Aux/USB Port (Black)",
-  category: "electronics",
-  price: "₹749",
-  image: "/img/8.jpg",
-  link: "https://amzn.to/4lj9rIc",
-  discount: "69% Off"
-},
-      {
-  title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
-  category: "fashion",
-  price: "₹379",
-  image: "/img/7.jpg",
-  link: "https://amzn.to/4kxSd90",
-  discount: "75% Off"
-},
-     {
-  title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
-  category: "accessories",
-  price: "₹1,799",
-  image: "/img/6.jpg",
-  link: "https://amzn.to/44moMlw",
-  discount: "40% Off"
-},
-      {
-  title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
-  category: "accessories",
-  price: "₹799",
-  image: "/img/5.jpg",
-  link: "https://amzn.to/4nBwijJ",
-  discount: "64% Off"
-},
-      {
-  title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
-  category: "accessories",
-  price: "₹419",
-  image: "/img/4.jpg",
-  link: "https://amzn.to/4llqsSh",
-  discount: "68% Off"
-},
-      {
-  title: "Havells Instanio 3L Instant Water Heater(Geyser)",
-  category: "electronics",
-  price: "₹3,650",
-  image: "/img/3.jpg",
-  link: "https://amzn.to/3Tu3zzS",
-  discount: "41% Off"
-},
-      {
-  title: "Taprin Men's Casual Shoes",
-  category: "fashion",
-  price: "₹570",
-  image: "/img/2.jpg",
-  link: "https://amzn.to/3IjTpiF",
-  discount: "43% Off"
-},
-      {
-  title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
-  category: "accessories",
-  price: "₹799",
-  image: "img/1.jpg",
-  link: "https://amzn.to/4lGovj1",
-  discount: "83% Off"
-}
-
-      // Add as many products as you want here, with or without 'discount'
+    // Product data: category is always an array of lowercase strings
+    const products = [
+    
+    {
+      title: "STRIFF Angles Adjustable Aluminum Ergonomic Foldable Portable Tabletop Laptop/Desktop Riser Stand Holder (Metallic Silver)",
+      category: "accessories",
+      price: "₹314",
+      image: "/img/9.jpg",
+      link: "https://amzn.to/3GALtJm",
+      discount: "79% Off"
+    },
+    {
+      title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volum Playtime Aux/USB Port (Black)",
+      category: "electronics",
+      price: "₹749",
+      image: "/img/8.jpg",
+      link: "https://amzn.to/4lj9rIc",
+      discount: "69% Off"
+    },
+    {
+      title: "TIMEWEAR Analog New Track Number Dial Day Date Functioning Leather Strap Watch for Men",
+      category: "fashion",
+      price: "₹379",
+      image: "/img/7.jpg",
+      link: "https://amzn.to/4kxSd90",
+      discount: "75% Off"
+    },
+    {
+      title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
+      category: "accessories",
+      price: "₹1,799",
+      image: "/img/6.jpg",
+      link: "https://amzn.to/44moMlw",
+      discount: "40% Off"
+    },
+    {
+      title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
+      category: "accessories",
+      price: "₹799",
+      image: "/img/5.jpg",
+      link: "https://amzn.to/4nBwijJ",
+      discount: "64% Off"
+    },
+    {
+      title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
+      category: "accessories",
+      price: "₹419",
+      image: "/img/4.jpg",
+      link: "https://amzn.to/4llqsSh",
+      discount: "68% Off"
+    },
+    {
+      title: "Havells Instanio 3L Instant Water Heater(Geyser)",
+      category: "electronics",
+      price: "₹3,650",
+      image: "/img/3.jpg",
+      link: "https://amzn.to/3Tu3zzS",
+      discount: "41% Off"
+    },
+    {
+      title: "Taprin Men's Casual Shoes",
+      category: "fashion",
+      price: "₹570",
+      image: "/img/2.jpg",
+      link: "https://amzn.to/3IjTpiF",
+      discount: "43% Off"
+    },
+    {
+      title: "PTron Bassbuds Xtreme Truly Wireless in Ear Earbuds",
+      category: "accessories",
+      price: "₹799",
+      image: "img/1.jpg",
+      link: "https://amzn.to/4lGovj1",
+      discount: "83% Off"
+    }
+    // Add more products as needed
     ];
 
     const productsPerPage = 8;
@@ -327,18 +326,23 @@
     let currentCategory = 'all';
     let searchTerm = '';
 
-    // --- URL Query Parameter Search System ---
     function getSearchFromQuery() {
       const params = new URLSearchParams(window.location.search);
       return params.get('search') || '';
     }
+    function getPageFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('page')) || 1;
+    }
 
-    // On page load, set search term from URL if present
+    // On page load, set search term and page from URL if present
     const initialSearch = getSearchFromQuery();
+    const initialPage = getPageFromQuery();
     if (initialSearch) {
       document.getElementById('searchBar').value = initialSearch;
       searchTerm = initialSearch;
     }
+    currentPage = initialPage;
 
     function filterProducts() {
       let filtered = products;
@@ -348,24 +352,36 @@
         filtered = filtered.filter(p =>
           Array.isArray(p.category)
             ? p.category.includes(currentCategory)
-            : p.category === currentCategory
+            : (typeof p.category === "string" && p.category.toLowerCase() === currentCategory)
         );
       }
 
-      // Search filter
+      // Search filter (multi-word, all words must match)
       if (searchTerm.trim() !== '') {
-        const term = searchTerm.toLowerCase();
-        filtered = filtered.filter(p =>
-          (p.title && p.title.toLowerCase().includes(term)) ||
-          (Array.isArray(p.category)
-            ? p.category.some(cat => cat.toLowerCase().includes(term))
-            : (p.category && p.category.toLowerCase().includes(term))
-          ) ||
-          (p.discount && p.discount.toLowerCase().includes(term))
-        );
+        const words = searchTerm.toLowerCase().split(/\s+/).filter(Boolean);
+        filtered = filtered.filter(p => {
+          let searchable = [
+            p.title || '',
+            Array.isArray(p.category) ? p.category.join(' ') : (p.category || ''),
+            p.discount || ''
+          ].join(' ').toLowerCase();
+          return words.every(word => searchable.includes(word));
+        });
       }
 
       return filtered;
+    }
+
+    function updateURL(page, searchTerm) {
+      let params = [];
+      if (searchTerm && searchTerm.trim() !== '') {
+        params.push('search=' + encodeURIComponent(searchTerm.trim()));
+      }
+      if (page > 1) {
+        params.unshift('page=' + page); // page first, then search
+      }
+      const query = params.length ? '?' + params.join('&') : '';
+      window.history.replaceState({}, '', '/' + query);
     }
 
     function renderProducts(filter = currentCategory, page = 1, search = searchTerm) {
@@ -446,7 +462,9 @@
     // Expose changePage globally for inline onclick
     window.changePage = function(page) {
       if (page < 1) return;
-      renderProducts(currentCategory, page, searchTerm);
+      currentPage = page;
+      updateURL(currentPage, searchTerm);
+      renderProducts(currentCategory, currentPage, searchTerm);
     }
 
     // Filter buttons
@@ -455,6 +473,8 @@
         document.querySelectorAll('.filters button[data-category]').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         currentCategory = this.dataset.category;
+        currentPage = 1;
+        updateURL(currentPage, searchTerm);
         renderProducts(currentCategory, 1, searchTerm);
       });
     });
@@ -466,18 +486,16 @@
       currentCategory = 'all';
       document.getElementById('searchBar').value = '';
       searchTerm = '';
-      window.history.replaceState({}, '', '/');
+      currentPage = 1;
+      updateURL(currentPage, searchTerm);
       renderProducts('all', 1, '');
     });
 
     // Search bar event (live search + update URL)
     document.getElementById('searchBar').addEventListener('input', function(e) {
       searchTerm = e.target.value;
-      if (searchTerm.trim() !== '') {
-        window.history.replaceState({}, '', '/?search=' + encodeURIComponent(searchTerm.trim()));
-      } else {
-        window.history.replaceState({}, '', '/');
-      }
+      currentPage = 1;
+      updateURL(currentPage, searchTerm);
       renderProducts(currentCategory, 1, searchTerm);
     });
 
@@ -486,18 +504,15 @@
       if (e.key === 'Enter') {
         e.preventDefault();
         searchTerm = e.target.value;
-        if (searchTerm.trim() !== '') {
-          window.history.replaceState({}, '', '/?search=' + encodeURIComponent(searchTerm.trim()));
-        } else {
-          window.history.replaceState({}, '', '/');
-        }
+        currentPage = 1;
+        updateURL(currentPage, searchTerm);
         renderProducts(currentCategory, 1, searchTerm);
         e.target.blur(); // Hide keyboard on mobile
       }
     });
 
     // Initial render
-    renderProducts(currentCategory, 1, searchTerm);
+    renderProducts(currentCategory, currentPage, searchTerm);
 
   </script>
 </body>
