@@ -562,8 +562,16 @@
     // Initial render
     renderProducts(currentCategory, currentPage, searchTerm);
 
+window.changePage = function(page) {
+  if (page < 1) return;
+  currentPage = page;
+  updateURL(currentPage, searchTerm);
+  renderProducts(currentCategory, currentPage, searchTerm);
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // This scrolls to the top smoothly
+}
+
+
+
   </script>
 </body>
 </html>
-
-
