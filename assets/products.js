@@ -2,7 +2,14 @@
     const products = [
       // ... product objects here ...
       
-      
+{
+  title: "pTron Newly Launched Fusion Hook v2 6W Bluetooth Speaker with 8 Hrs Playtime, 2.04 Neo Driver for Pristine Sound, Mini Size Portable Speaker",
+  category: ["electronics" ,"accessories"],
+  price: "₹499",
+  image: "/img/31.jpg",
+  link: "https://amzn.to/41dbghR",
+  discount: "67% Off"
+},
 {
   title: "Gesto Silicone 3D Moon Lamp for Home Decor - 7 Colour Changeable Night Lamp with Stand | Touch Controled Decorative Moon Light for Bedrooms (15 Cm)",
   category: ["home"],
