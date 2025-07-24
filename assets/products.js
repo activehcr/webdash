@@ -3,6 +3,22 @@
       // ... product objects here ...
       
 {
+  title: "ZEBRONICS Metal Power Bank, 20000 mAh, 22.5W Super Fast Charging PD 3.0",
+  category: ["electronics", "accessories"],
+  price: "₹1,399",
+  image: "/img/33.jpg",
+  link: "https://amzn.to/44PYW9O",
+  discount: "53% Off"
+},
+{
+  title: "ZEBRONICS Metal Power Bank, 10000 mAh, 22.5W Super Fast Charging PD 3.0, Sleek & Stylish",
+  category: ["electronics", "accessories"],
+  price: "₹899",
+  image: "/img/32.jpg",
+  link: "https://amzn.to/44YgRK8",
+  discount: "61% Off"
+},
+{
   title: "pTron Newly Launched Fusion Hook v2 6W Bluetooth Speaker with 8 Hrs Playtime, 2.04 Neo Driver for Pristine Sound, Mini Size Portable Speaker",
   category: ["electronics" ,"accessories"],
   price: "₹499",
@@ -123,7 +139,7 @@
   discount: "58% Off"
 },
 {
-  title: "Philips Audio TWS TAT3225 True Wireless Earbuds with 24 Hr Playtime (6+18), IPX4, Bluetooth 5.2, 13 mm Drivers",
+  title: "Philips Audio TWS True Wireless Earbuds with 24 Hr Playtime (6+18), IPX4, Bluetooth 5.2, 13 mm Drivers",
   category: ["accessories"],
   price: "₹899",
   image: "/img/16.jpg",
@@ -139,7 +155,7 @@
   discount: "79% Off"
 },
 {
-  title: "JBL Wave Buds 2 Ear Buds Wireless Bluetooth V5.3, Active Noise Cancellation EarBuds, Multi Connect, Speed Charge, 40H Playback, Fast Pair, 4 Mics, IP54 (Black)",
+  title: "JBL Wave Buds 2 Ear Buds Wireless Bluetooth V5.3, Active Noise Cancellation EarBuds, Speed Charge, 40H Playback, Fast Pair, 4 Mics, IP54 (Black)",
   category: ["accessories"],
   price: "₹2,999",
   image: "/img/14.jpg",
@@ -147,7 +163,7 @@
   discount: "57% Off"
 },
 {
-  title: "IZI Smart Pro with a 1.92 Retina Display, Bluetooth Calling, Always-On Display, AI Voice Assistant, Activity Tracker, ECG, SpO2, BP Monitoring, 5-Day Battery Life",
+  title: "IZI Smart Pro with a 1.92 Retina Display, Bluetooth Calling, Always-On Display, Activity Tracker, ECG, SpO2, BP Monitoring, 5-Day Battery Life",
   category: ["fitness", "fashion"],
   price: "₹2,080",
   image: "/img/13.jpg",
@@ -155,7 +171,7 @@
   discount: "77% Off"
 },
 {
-  title: "OLICOM Smart Watch for Kids Men Boys 10-12 Years Old, Women Girls ID116 Bluetooth Smartwatch Wireless Fitness Band",
+  title: "OLICOM Smart Watch for Kids Men Boys 10-12 Years Old, Women Girls Bluetooth Smartwatch Wireless Fitness Band",
   category: ["fitness", "fashion"],
   price: "₹429",
   image: "/img/12.jpg",
@@ -187,7 +203,7 @@
   discount: "79% Off"
 },
 {
-  title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs @50% Volume Playtime Aux/USB Port (Black)",
+  title: "amazon basics Bluetooth Speaker 5.3 Soundbar with 16W RMS, 2000mAh Battery, Upto 8 Hrs Playtime Aux/USB Port (Black)",
   category: ["electronics"],
   price: "₹749",
   image: "/img/8.jpg",
@@ -203,7 +219,7 @@
   discount: "75% Off"
 },
 {
-  title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty",
+  title: "SanDisk Ultra Flair 256GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5-Y Warranty",
   category: ["accessories"],
   price: "₹1,799",
   image: "/img/6.jpg",
@@ -211,7 +227,7 @@
   discount: "40% Off"
 },
 {
-  title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | Reliable Data Storage with 5-Year Warranty",
+  title: "Lapcare Flais 128GB Metal USB 3.2 Flash Drive | Pen Drive | Up to 400Mbps Speed | 5-Year Warranty",
   category: ["accessories"],
   price: "₹799",
   image: "/img/5.jpg",
@@ -219,7 +235,7 @@
   discount: "64% Off"
 },
 {
-  title: "HP v222w 64GB USB 2.0 Pen Drive (Silver)",
+  title: "HP 64GB USB 2.0 Pen Drive (Silver)",
   category: ["accessories"],
   price: "₹419",
   image: "/img/4.jpg",
