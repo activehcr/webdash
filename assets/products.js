@@ -139,12 +139,12 @@
   discount: "58% Off"
 },
 {
-  title: "Philips Audio TWS True Wireless Earbuds with 24 Hr Playtime (6+18), IPX4, Bluetooth 5.2, 13 mm Drivers",
+  title: "Nu Republic Cyberstud X8 TWS Wireless Earbuds - Up to 56Hrs Playtime, 40ms Ultra Low Latency, 13mm Neodymium Drivers",
   category: ["accessories"],
   price: "₹899",
   image: "/img/16.jpg",
-  link: "https://amzn.to/46FlbQS",
-  discount: "89% Off"
+  link: "https://amzn.to/3UIEuS1",
+  discount: "70% Off"
 },
 {
   title: "Vintage Clock Iron Gold Large Analog Wall Clock/One Year Warranty / 90630-30, 75 Centimeters, 3.81 CM",
