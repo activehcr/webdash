@@ -3,6 +3,14 @@
       // ... product objects here ...
       
 {
+  title: "Zebronics 200HB USB 3.0 4 Port hub with Hi Speed Data Transfer, Aluminum + ABS Body",
+  category: ["accessories"],
+  price: "₹229",
+  image: "/img/34.jpg",
+  link: "https://amzn.to/3U72HBq",
+  discount: "77% Off"
+},
+{
   title: "ZEBRONICS Metal Power Bank, 20000 mAh, 22.5W Super Fast Charging PD 3.0",
   category: ["electronics", "accessories"],
   price: "₹1,399",
@@ -19,7 +27,7 @@
   discount: "61% Off"
 },
 {
-  title: "pTron Newly Launched Fusion Hook v2 6W Bluetooth Speaker with 8 Hrs Playtime, 2.04 Neo Driver for Pristine Sound, Mini Size Portable Speaker",
+  title: "pTron Fusion Hook Mini Size, Portable Bluetooth Speaker with 8 Hrs Playtime, 2.04 Neo Driver for Pristine Sound",
   category: ["electronics" ,"accessories"],
   price: "₹499",
   image: "/img/31.jpg",
@@ -107,20 +115,20 @@
   discount: "88% Off"
 },
 {
-  title: "CELLBELL Desire Ergonomic Office Chair, Study, Revolving, Computer, Metal Base Seat Height Adjustable Chair (Red)",
-  category: ["home"],
-  price: "₹2,698",
+  title: "Weird Wolf Heavy Duty Mosquito Racket Bat | Rechargeable Electric Fly Swatter | Mosquito Killer Racquet",
+  category: ["electronics"],
+  price: "₹284",
   image: "/img/20.jpg",
-  link: "https://amzn.to/3GGFpPB",
-  discount: "73% Off"
+  link: "https://amzn.to/4l6n5h1",
+  discount: "64% Off"
 },
 {
   title: "HAMMER Screen TWS, ANC (32dB), Smart Touch Display True Wireless Buds, Type-C Fast Charging, Bv5.4, Find My Earbuds, 4 Mics ENC",
   category: ["accessories"],
-  price: "₹1,399",
+  price: "₹1,349",
   image: "/img/19.jpg",
   link: "https://amzn.to/44pcxEK",
-  discount: "84% Off"
+  discount: "85% Off"
 },
 {
   title: "REDUX Analog Boy's & Men's Watch (Blue Dial Blue Colored Strap)",
